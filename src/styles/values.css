@@ -1,0 +1,118 @@
+.values-section {
+  background-color: var(--primary-dark);
+  padding: 95px 8%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.values-section > p:first-of-type {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.values-section > h3 {
+  font-size: clamp(28px, 4.2vw, 40px);
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 12px;
+}
+
+.values-section > p:nth-of-type(2) {
+  font-size: 16px;
+  color: var(--text-light-muted);
+  max-width: 580px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+}
+
+/* Conteneur des 7 valeurs */
+.values-section > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Chaque valeur */
+.values-section > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 120px;
+  padding: 20px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 163, 89, 0.15);
+  transition: all 0.3s ease;
+}
+
+.values-section > div > div:hover {
+  background: rgba(212, 163, 89, 0.1);
+  border-color: var(--accent-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.values-section > div > div svg {
+  color: var(--accent-gold);
+  width: 36px;
+  height: 36px;
+  stroke-width: 1.75;
+  transition: transform 0.3s ease;
+}
+
+.values-section > div > div:hover svg {
+  transform: scale(1.15);
+}
+
+.values-section > div > div p {
+  font-size: 14.5px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #e2e8f0;
+  margin: 0;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .values-section {
+    padding: 75px 5%;
+  }
+
+  .values-section > div {
+    gap: 20px;
+  }
+
+  .values-section > div > div {
+    min-width: 110px;
+    padding: 16px 12px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .values-section {
+    padding: 55px 5%;
+  }
+
+  .values-section > div {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+
+  .values-section > div > div {
+    min-width: unset;
+    width: 100%;
+  }
+}
+

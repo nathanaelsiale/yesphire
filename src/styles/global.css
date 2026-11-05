@@ -1,0 +1,63 @@
+:root {
+  --primary-dark: #071710;
+  --primary-darker: #040e0a;
+  --primary-surface: #0e241b;
+  --accent-gold: #d4a359;
+  --accent-gold-hover: #c29045;
+  --accent-gold-light: rgba(212, 163, 89, 0.12);
+  --bg-light: #fdfbf7;
+  --bg-light-surface: #ffffff;
+  --text-dark: #0f172a;
+  --text-dark-muted: #526159;
+  --text-light: #ffffff;
+  --text-light-muted: #9bb0a5;
+  --border-light: #ebe4d8;
+  --border-dark: rgba(212, 163, 89, 0.2);
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --transition: all 0.25s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--primary-dark);
+  color: var(--text-light);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+

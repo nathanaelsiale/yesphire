@@ -1,0 +1,123 @@
+.team-section {
+  background-color: var(--bg-light);
+  padding: 100px 8%;
+  color: var(--text-dark);
+}
+
+.team-section > p {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 8px;
+}
+
+.team-section > h3 {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin-bottom: 40px;
+}
+
+/* Grille de l'équipe */
+.team-section > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* Carte membre */
+.team-section > div > div {
+  background: var(--bg-light-surface);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  padding: 32px 26px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  position: relative;
+}
+
+.team-section > div > div:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+  border-color: rgba(212, 163, 89, 0.5);
+}
+
+/* Avatar abstrait stylé */
+.team-section > div > div::before {
+  content: '👤';
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #071710 0%, #153225 100%);
+  border: 2px solid var(--accent-gold);
+  margin-bottom: 16px;
+}
+
+/* Nom */
+.team-section > div > div h4 {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-dark);
+  margin: 0 0 4px 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Prénom */
+.team-section > div > div p:nth-of-type(1) {
+  font-size: 15px;
+  color: var(--text-dark-muted);
+  margin: 0 0 20px 0;
+}
+
+/* Poste (badge) */
+.team-section > div > div p:nth-of-type(2) {
+  display: inline-block;
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(212, 163, 89, 0.15);
+  color: #92641f;
+  border: 1px solid rgba(212, 163, 89, 0.35);
+  margin-top: auto;
+  margin-bottom: 0;
+}
+
+/* Tablette */
+@media (max-width: 1024px) {
+  .team-section {
+    padding: 75px 6%;
+  }
+
+  .team-section > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .team-section {
+    padding: 55px 5%;
+  }
+
+  .team-section > div {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .team-section > div > div {
+    padding: 24px 20px;
+  }
+}
+
