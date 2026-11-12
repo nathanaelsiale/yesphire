@@ -26,6 +26,12 @@ ${message}`;
         const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
         
         window.open(whatsappUrl, '_blank');
+
+        // Réinitialisation des champs après l'envoi
+        setName('');
+        setEmail('');
+        setSubject('');
+        setMessage('');
     };
 
     return (
