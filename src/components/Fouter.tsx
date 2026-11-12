@@ -12,8 +12,8 @@ export default function Fouter() {
 
                 <div className="footer-col">
                     <h5>Contact</h5>
-                    <p><a href="tel:+23672000000">+236 72 00 00 00</a></p>
-                    <p><a href="mailto:contact@yesphire.org">contact@yesphire.org</a></p>
+                    <p><a href="https://wa.me/23674615221" target="_blank" rel="noreferrer">+236 74 61 52 21</a></p>
+                    <p><a href="mailto:yesphire@gmail.com">yesphire@gmail.com</a></p>
                     <p>Bangui, République centrafricaine</p>
                 </div>
 

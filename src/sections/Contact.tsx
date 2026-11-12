@@ -1,7 +1,33 @@
+import { useState } from 'react';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import '../styles/contact.css';
 
 export default function Contact() {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [subject, setSubject] = useState('');
+    const [message, setMessage] = useState('');
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        const phoneNumber = "23674615221"; // Numéro WhatsApp YESPHIRE
+
+        const text = 
+`*Nouveau message depuis le site YESPHIRE* 🌿
+
+👤 *Nom :* ${name}
+📧 *Email :* ${email}
+📌 *Objet :* ${subject}
+
+💬 *Message :*
+${message}`;
+
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
+        
+        window.open(whatsappUrl, '_blank');
+    };
+
     return (
         <section className="contact-section" id="contact">
             <div className="contact-header">
@@ -20,8 +46,8 @@ export default function Contact() {
                     <div className="contact-item">
                         <Phone />
                         <div>
-                            <span>Téléphone</span>
-                            <b>+236 72 00 00 00</b>
+                            <span>Téléphone / WhatsApp</span>
+                            <b><a href="https://wa.me/23674615221" target="_blank" rel="noreferrer">+236 74 61 52 21</a></b>
                         </div>
                     </div>
 
@@ -29,7 +55,7 @@ export default function Contact() {
                         <Mail />
                         <div>
                             <span>Email</span>
-                            <b>contact@yesphire.org</b>
+                            <b><a href="mailto:yesphire@gmail.com">yesphire@gmail.com</a></b>
                         </div>
                     </div>
 
@@ -42,14 +68,37 @@ export default function Contact() {
                     </div>
                 </div>
 
-                <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
-                    <input type="text" placeholder="Votre nom complet" required />
-                    <input type="email" placeholder="Votre adresse email" required />
-                    <input type="text" placeholder="Objet du message" required />
-                    <textarea placeholder="Votre message..." required></textarea>
+                <form className="contact-form" onSubmit={handleSubmit}>
+                    <input 
+                        type="text" 
+                        placeholder="Votre nom complet" 
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required 
+                    />
+                    <input 
+                        type="email" 
+                        placeholder="Votre adresse email" 
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required 
+                    />
+                    <input 
+                        type="text" 
+                        placeholder="Objet du message" 
+                        value={subject}
+                        onChange={(e) => setSubject(e.target.value)}
+                        required 
+                    />
+                    <textarea 
+                        placeholder="Votre message..." 
+                        value={message}
+                        onChange={(e) => setMessage(e.target.value)}
+                        required
+                    ></textarea>
                     <button type="submit" className="contact-btn">
                         <Send size={16} style={{ display: 'inline', marginRight: '8px' }} />
-                        Envoyer le message
+                        Envoyer via WhatsApp
                     </button>
                 </form>
             </div>
